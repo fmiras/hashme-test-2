@@ -1,17 +1,16 @@
-import React, { Component } from 'react'
-import { Container, Header, Content } from 'native-base'
-
+import React from 'react'
+import { StackNavigator } from 'react-navigation'
 import HomeScreen from './src/screens/HomeScreen'
+import DetailsScreen from './src/screens/DetailsScreen'
 
-export default class AwesomeApp extends Component {
-  render () {
-    return (
-      <Container>
-        <Header />
-        <Content>
-          <HomeScreen />
-        </Content>
-      </Container>
-    )
+export default StackNavigator({
+  Home: {
+    screen: HomeScreen
+  },
+  Details: {
+    screen: DetailsScreen
   }
-}
+},
+  {
+    initialRouteName: 'Home'
+  })
