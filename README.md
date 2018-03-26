@@ -24,6 +24,13 @@ The command line will load the app assets and show you a QR code to scan with yo
 Note: this project was only tested on *iPhone X* so it might be some bugs on other devices
 
 ## Usage
+To use a compiled version of the application run on the same directory
+```bash
+npm run build
+```
+
+This will output an `.apk` file for Android.
+
 The application has 2 screens, the hotel list and the detailed hotel as shown on the following screenshots:
 ![screenshot](https://i.imgur.com/bvLO6aJ.jpg)
 
