@@ -38,9 +38,8 @@ class DetailsScreen extends React.Component {
           <Price price={this.state.hotel.price} />
         </ListItem>
         {this.state.hotel.images.map(image => (
-          <ListItem>
+          <ListItem key={this.state.hotel.name}>
             <Image
-              key={this.state.hotel.name}
               source={{ uri: image }}
               style={{height: 200, width: null, flex: 1}}
             />
