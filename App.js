@@ -1,21 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from 'react'
+import { Container, Header, Content } from 'native-base'
 
-export default class App extends React.Component {
-  render() {
+import HomeScreen from './src/screens/HomeScreen'
+
+export default class AwesomeApp extends Component {
+  render () {
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
-    );
+      <Container>
+        <Header />
+        <Content>
+          <HomeScreen />
+        </Content>
+      </Container>
+    )
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
