@@ -1,13 +1,14 @@
 import React from 'react'
 import HotelCard from './HotelCard'
 
-export default ({ hotels }) => hotels.map(
-  ({ name, images, stars, price }) =>
-    <HotelCard
-      key={name}
-      name={name}
-      image={images[0]}
-      stars={stars}
-      price={price}
-    />
+export default ({ hotels, onPress }) => hotels.map(
+  hotel => <HotelCard
+    key={hotel.name}
+    name={hotel.name}
+    image={hotel.images[0]}
+    stars={hotel.stars}
+    price={hotel.price}
+    onPress={() => onPress(hotel)}
+        />
+
 )

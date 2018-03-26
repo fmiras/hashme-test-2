@@ -2,7 +2,10 @@ import React from 'react'
 import { Image } from 'react-native'
 import { Card, CardItem, Text, Icon, Left, Body, Right } from 'native-base'
 
-export default ({ image, name, stars, price }) => (
+import Price from '../components/Price'
+import Stars from '../components/Stars'
+
+export default ({ image, name, stars, price, onPress }) => (
   <Card>
     <CardItem>
       <Left>
@@ -11,21 +14,15 @@ export default ({ image, name, stars, price }) => (
         </Body>
       </Left>
     </CardItem>
-    <CardItem cardBody>
+    <CardItem cardBody button onPress={onPress}>
       <Image source={{ uri: image }} style={{height: 200, width: null, flex: 1}} />
     </CardItem>
     <CardItem>
       <Left>
-        <Icon active name='pricetag' />
-        <Text>${price} por noche</Text>
+        <Price price={price} />
       </Left>
-      <Right style={{flexDirection: 'row'}}>
-        {[...Array(Number(stars))].map((x, i) =>
-          <Icon key={i} active name='ios-star' />
-        )}
-        {[...Array(Number(5 - stars))].map((x, i) =>
-          <Icon key={i} active name='ios-star-outline' />
-        )}
+      <Right>
+        <Stars stars={stars} />
       </Right>
     </CardItem>
   </Card>
